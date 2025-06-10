@@ -1,0 +1,26 @@
+{
+    "14149727929": {
+        "nome": "Vitor",
+        "sobrenome": "Natal",
+        "senha": "123",
+        "saldo": 25,
+        "transacoes": [],
+        "caixinhas": {}
+    },
+    "71070735086": {
+        "nome": "Gamaliel",
+        "sobrenome": "Viado",
+        "senha": "Senha",
+        "saldo": 800000,
+        "transacoes": [],
+        "caixinhas": {}
+    },
+    "48527556049": {
+        "nome": "Leilamag",
+        "sobrenome": "Frente",
+        "senha": "ahnes",
+        "saldo": 0.0,
+        "transacoes": [],
+        "caixinhas": {}
+    }
+}
