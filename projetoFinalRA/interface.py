@@ -1,17 +1,19 @@
 import tkinter as tk
 from tkinter import font as tkfont
-
+from usuario import carregar_usuarios, salvar_usuarios
 
 class MainApp:
-    def __init__(self, root):
+    def __init__(self, root, cpf_usuario):
         self.root = root
-        self.root.title("Nubank Simples")
+        self.root.title("NatalBank")
         self.root.configure(bg="#5e157c")
-        
+        self.cpf = cpf_usuario  # salva o CPF
+
         self.custom_font = tkfont.Font(family="Helvetica", size=12, weight="bold")
         
+        self.dados = carregar_usuarios()
+        self.usuario = self.dados[self.cpf]
         self.create_widgets()
-    
     def create_widgets(self):
         # Cabeçalho
         
@@ -26,7 +28,7 @@ class MainApp:
                                      anchor="w")
         self.balance_label.pack(pady=(20, 5), fill="x", padx=20)
         
-        self.balance_value = tk.Label(self.balance_frame, text="R$ 5.000,00", 
+        self.balance_value = tk.Label(self.balance_frame, text=f"R${self.usuario['saldo']}", 
                                      bg="#871FB4", fg="white", font=("Helvetica", 32, "bold"),
                                      anchor="w")
         self.balance_value.pack(pady=(0, 20), fill="x", padx=20)
@@ -36,7 +38,7 @@ class MainApp:
         self.main_frame.pack(fill="both", expand=True, padx=20, pady=10)
         
         # Mensagem de boas-vindas alinhada à esquerda
-        self.welcome_label = tk.Label(self.main_frame, text="Olá, bem-vindo de volta!", 
+        self.welcome_label = tk.Label(self.main_frame, text=f"Olá {self.usuario['nome']}, bem-vindo de volta!", 
                                     bg="white", font=("Helvetica", 16),
                                     anchor="w", justify="left")
         self.welcome_label.pack(pady=20, fill="x", padx=20)
@@ -51,7 +53,8 @@ class MainApp:
                           borderwidth=0, font=self.custom_font, width=15, height=3)
             btn.grid(row=0, column=i, padx=10, pady=10)
 
-if __name__ == "__main__":
+def abrir_janela_principal(cpf_usuario):
     root = tk.Tk()
-    app = MainApp(root)
+    app = MainApp(root, cpf_usuario)
     root.mainloop()
+
