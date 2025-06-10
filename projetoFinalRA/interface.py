@@ -14,17 +14,12 @@ class MainApp:
     
     def create_widgets(self):
         # Cabeçalho
-        self.header_frame = tk.Frame(self.root, bg="#5e157c", height=80)
-        self.header_frame.pack(fill="x", padx=20, pady=(20, 10))
         
-        self.menu_button = tk.Button(self.header_frame, text="☰", bg="#5e157c", fg="white", 
-                                   borderwidth=0, font=self.custom_font)
-        self.menu_button.pack(side="left")
         
         
         # Saldo (agora alinhado à esquerda)
         self.balance_frame = tk.Frame(self.root, bg="#871FB4", height=150)
-        self.balance_frame.pack(fill="x", padx=20, pady=10)
+        self.balance_frame.pack(fill="x", padx=20, pady=20)
         
         self.balance_label = tk.Label(self.balance_frame, text="Saldo disponível", 
                                      bg="#871FB4", fg="white", font=self.custom_font,
@@ -38,7 +33,7 @@ class MainApp:
         
         # Área principal
         self.main_frame = tk.Frame(self.root, bg="white")
-        self.main_frame.pack(fill="both", expand=True, padx=20, pady=20)
+        self.main_frame.pack(fill="both", expand=True, padx=20, pady=10)
         
         # Mensagem de boas-vindas alinhada à esquerda
         self.welcome_label = tk.Label(self.main_frame, text="Olá, bem-vindo de volta!", 
