@@ -30,17 +30,19 @@ def sacar(cpf, valor, dados):
 def transferir(cpfRemetente, cpfDestinatario, valor, dados):
     if valor > dados[cpfRemetente]["saldo"]:
         return "saldo insuficiente"
-    elif not dados[cpfDestinatario]:
+        
+    elif cpfRemetente == cpfDestinatario:
+        return "destinário igual remetente"
+    try:
+        dados[cpfRemetente]["saldo"] -= valor
+        dados[cpfDestinatario]["saldo"] += valor
+        registrar_transacao(cpfRemetente, f"transferência para {cpfDestinatario}", valor, dados)
+        registrar_transacao(cpfDestinatario, f"transferência de   {cpfRemetente}", valor, dados)
+        salvar_usuarios(dados)
+        return dados[cpfRemetente]["saldo"]
+    
+    except KeyError:
         return "destinatário não encontrado"
-    
-    dados[cpfRemetente]["saldo"] -= valor
-    dados[cpfDestinatario]["saldo"] += valor
-    registrar_transacao(cpfRemetente, f"transferência para {cpfDestinatario}", valor, dados)
-    registrar_transacao(cpfDestinatario, f"transferência de   {cpfRemetente}", valor, dados)
-    salvar_usuarios(dados)
-    
-    return dados[cpfRemetente]["saldo"]
-
 
 
 def exportar_extrato():

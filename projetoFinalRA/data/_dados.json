@@ -1,1 +1,20 @@
-{}
+{
+    "06215457086": {
+        "nome": "Enaldo",
+        "sobrenome": "Mezari",
+        "senha": "123",
+        "saldo": 50.0,
+        "transacoes": [
+            {
+                "tipo": "deposito",
+                "valor": 100.0,
+                "data_hora": "2025-06-17 10:06:37"
+            },
+            {
+                "tipo": "saque",
+                "valor": 50.0,
+                "data_hora": "2025-06-17 10:06:55"
+            }
+        ]
+    }
+}

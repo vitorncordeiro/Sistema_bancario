@@ -31,10 +31,16 @@ def abrir_janela_transferencia(titulo, cpf, dados, label):
             tk.messagebox.showerror("Erro", "O valor inserido é inválido")
             return
         novo_saldo = transferir(cpf, entry_cpf_remetente.get(), valor, dados)
+        
         if novo_saldo == "destinatário não encontrado":
             tk.messagebox.showerror("Erro", "O destinatário não está cadastrado no sistema")
+            return
         elif novo_saldo == "saldo insuficiente":
             tk.messagebox.showerror("Erro", "Transação não autorizada: Saldo insuficiente.")
+            return
+        elif novo_saldo == "destinatário igual remetente":
+            tk.messagebox.showerror("Erro", "Transação não autorizada: Você não pode transferir para si mesmo.")
+            return
         atualizar_saldo_na_tela(label, novo_saldo)
         janela.destroy()
     botao = tk.Button(janela, text="Confirmar", command=confirmar)
