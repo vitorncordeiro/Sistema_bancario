@@ -7,3 +7,4 @@ inicializar_arquivo()
 # Inicializa a janela de login
 
 janela_login.mainloop()
+    
