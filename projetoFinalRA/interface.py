@@ -97,7 +97,7 @@ def criar_titulo(framePai, texto):
     tk.Label(framePai, text=texto, bg="#2b2b2b", font=("Helvetica", 16), anchor="w", justify="left", fg='white').pack(pady=20, fill="x", padx=20)
 
 def mostrar_historico(framePai, cpf_usuario, dados):
-    tk.Label(framePai, text="Últimas transações", bg="#2B2B2B", fg="white", font=("Arial", 16)).pack(anchor="w", padx=10, pady=4)
+    tk.Label(framePai, text="   Últimas transações", bg="#2B2B2B", fg="white", font=("Arial", 16)).pack(anchor="w", padx=10, pady=4)
     transacoes = dados[cpf_usuario].get("transacoes", [])
     ultimas_5 = transacoes[-5:][::-1]
     for transacao in ultimas_5:
@@ -141,10 +141,10 @@ def abrir_janela_principal(cpf_usuario):
     criar_titulo(main_frame, f"Olá {usuario['nome']}, bem-vindo de volta!")
 
     frame_inferior = tk.Frame(main_frame, bg='#2b2b2b')
-    frame_inferior.pack(fill=tk.BOTH, expand=True)
+    frame_inferior.pack(expand=True, side="top")
 
     frame_historico = tk.Frame(frame_inferior, bg='#2b2b2b')
-    frame_historico.pack(side=tk.TOP, pady=20)
+    frame_historico.pack(pady=20)
 
     mostrar_historico(frame_historico, cpf_usuario, dados)
 
@@ -153,6 +153,6 @@ def abrir_janela_principal(cpf_usuario):
             widget.destroy()
         mostrar_historico(frame_historico, cpf_usuario, dados)
 
-    criar_botoes(main_frame, cpf_usuario, dados, label, atualizar_historico)
+    criar_botoes(frame_inferior, cpf_usuario, dados, label, atualizar_historico)
 
     

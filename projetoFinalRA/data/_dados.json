@@ -3,7 +3,7 @@
         "nome": "Vitor",
         "sobrenome": "Natal",
         "senha": "123",
-        "saldo": 50.51000000000022,
+        "saldo": 26.51000000000022,
         "transacoes": [
             {
                 "tipo": "saque",
@@ -234,6 +234,41 @@
                 "tipo": "saque",
                 "valor": 1.0,
                 "data_hora": "2025-06-18 10:44:31"
+            },
+            {
+                "tipo": "deposito",
+                "valor": 1.0,
+                "data_hora": "2025-06-18 10:59:47"
+            },
+            {
+                "tipo": "transfer\u00eancia para 48527556049",
+                "valor": 12.0,
+                "data_hora": "2025-06-18 11:00:33"
+            },
+            {
+                "tipo": "dep\u00f3sito para 14149727929",
+                "valor": 1.0,
+                "data_hora": "2025-06-18 11:03:18"
+            },
+            {
+                "tipo": "dep\u00f3sito para 14149727929",
+                "valor": 1.0,
+                "data_hora": "2025-06-18 11:03:20"
+            },
+            {
+                "tipo": "saque de 14149727929",
+                "valor": 1.0,
+                "data_hora": "2025-06-18 11:03:22"
+            },
+            {
+                "tipo": "saque de 14149727929",
+                "valor": 1.0,
+                "data_hora": "2025-06-18 11:03:26"
+            },
+            {
+                "tipo": "saque de 14149727929",
+                "valor": 1.0,
+                "data_hora": "2025-06-18 11:03:29"
             }
         ]
     },
@@ -254,8 +289,14 @@
         "nome": "Leilamag",
         "sobrenome": "Frente",
         "senha": "ahnes",
-        "saldo": 0.0,
-        "transacoes": []
+        "saldo": 12.0,
+        "transacoes": [
+            {
+                "tipo": "transfer\u00eancia de   14149727929  ",
+                "valor": 12.0,
+                "data_hora": "2025-06-18 11:00:33"
+            }
+        ]
     },
     "83356889079": {
         "nome": "Gilmar",
