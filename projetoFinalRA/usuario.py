@@ -35,7 +35,8 @@ def cadastrar_usuario(cpf, senha, primeiroNome, sobrenome):
             "sobrenome": sobrenome,
             "senha": senha,
             "saldo": 0.0,
-            "transacoes": []
+            "transacoes": [],
+            "caixinhas": {}  # nenhuma criada por padrão
         }
         salvar_usuarios(dados)
         return 'cadastrado'

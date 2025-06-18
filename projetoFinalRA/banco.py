@@ -37,7 +37,7 @@ def transferir(cpfRemetente, cpfDestinatario, valor, dados):
         dados[cpfRemetente]["saldo"] -= valor
         dados[cpfDestinatario]["saldo"] += valor
         registrar_transacao(cpfRemetente, f"transferência para {cpfDestinatario}", valor, dados)
-        registrar_transacao(cpfDestinatario, f"transferência de   {cpfRemetente}", valor, dados)
+        registrar_transacao(cpfDestinatario, f"transferência de   {cpfRemetente}  ", valor, dados)
         salvar_usuarios(dados)
         return dados[cpfRemetente]["saldo"]
     
@@ -45,7 +45,6 @@ def transferir(cpfRemetente, cpfDestinatario, valor, dados):
         return "destinatário não encontrado"
 
 
-def exportar_extrato():
-    print("Função: Exportar extrato")
+
 
 # Mapeamento dos nomes para funções

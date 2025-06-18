@@ -19,23 +19,26 @@ def abrir_janela_cadastro():
     cadastro_window.title("Natalbank - Cadastrar Usuário")
     cadastro_window.geometry("800x800")
     cadastro_window.config(bg="#2B2B2B")
+    cadastro_window.attributes("-fullscreen", True)
 
+    tk.Label(cadastro_window, text="Sistema de Cadastro", 
+                        bg="#2B2B2B", fg="white", font=("Helvetica", 30)).pack(pady=(20, 90))
     
 
-    tk.Label(cadastro_window,bg="#2B2B2B", fg="white", text="CPF:").pack(pady=5)
-    entry_novo_cpf = tk.Entry(cadastro_window)
+    tk.Label(cadastro_window, text="CPF:", bg="#2B2B2B", fg='white', font=("Montserrat", 20)).pack(pady=5)
+    entry_novo_cpf = tk.Entry(cadastro_window, font=("Montserrat", 20), bg="#2B2B2B", bd=1, relief="solid", fg="#ffffff")
     entry_novo_cpf.pack()
 
-    tk.Label(cadastro_window,bg="#2B2B2B", fg="white", text="Senha:").pack(pady=5)
-    entry_nova_senha = tk.Entry(cadastro_window, show="*")
+    tk.Label(cadastro_window, text="Senha:", bg="#2B2B2B", fg='white', font=("Montserrat", 20)).pack(pady=5)
+    entry_nova_senha = tk.Entry(cadastro_window, show="*", font=("Montserrat", 20), bg="#2B2B2B", bd=1, relief="solid", fg="#ffffff")
     entry_nova_senha.pack()
 
-    tk.Label(cadastro_window, bg="#2B2B2B", fg="white", text="Primeiro Nome").pack(pady=5)
-    entry_primeiro_nome = tk.Entry(cadastro_window)
+    tk.Label(cadastro_window, text="Primeiro Nome:", bg="#2B2B2B", fg='white', font=("Montserrat", 20)).pack(pady=5)
+    entry_primeiro_nome = tk.Entry(cadastro_window, font=("Montserrat", 20), bg="#2B2B2B", bd=1, relief="solid", fg="#ffffff")
     entry_primeiro_nome.pack()
 
-    tk.Label(cadastro_window, bg="#2B2B2B", fg="white", text="Sobrenome").pack(pady=5)
-    entry_sobrenome = tk.Entry(cadastro_window)
+    tk.Label(cadastro_window, text="Sobrenome:", bg="#2B2B2B", fg='white', font=("Montserrat", 20)).pack(pady=5)
+    entry_sobrenome = tk.Entry(cadastro_window, font=("Montserrat", 20), bg="#2B2B2B", bd=1, relief="solid", fg="#ffffff")
     entry_sobrenome.pack()
 
     
@@ -56,24 +59,35 @@ def abrir_janela_cadastro():
         elif cadastro == 'dados incompletos':
             messagebox.showerror("Erro", "Preencha todos os campos")
 
-    tk.Button(cadastro_window,bg="#871Fb4",relief="flat", fg="white", text="Cadastrar", command=cadastrar).pack(pady=20)
+    tk.Button(cadastro_window,bg="#871Fb4", text="Cadastrar", command=cadastrar, fg="white", relief="flat",
+          font=("Montserrat", 18), width=10).pack(pady=20)
 
 janela_login = tk.Tk()
 janela_login.title("NatalBank - Login")
 janela_login.geometry("800x800")
 janela_login.configure(bg="#2B2B2B")
+janela_login.attributes("-fullscreen", True)
+
 titulo_label = tk.Label(janela_login, text="Sistema de Login", 
-                                     bg="#2B2B2B", fg="white", font=("Helvetica", 30)
-                                     )
+                        bg="#2B2B2B", fg="white", font=("Helvetica", 30))
 titulo_label.pack(pady=(20, 5), fill="x", padx=20)
 
-tk.Label(janela_login, text="CPF:", bg="#2B2B2B", fg='white', font=("Montserrat", 20)).pack(pady=5)
-entry_cpf = tk.Entry(janela_login, font=("Montserrat", 20), bg="#2B2B2B", bd=1, relief="solid", fg="#ffffff")
+frame_central = tk.Frame(janela_login, bg="#2B2B2B")
+frame_central.pack(expand=True, pady=(0, 200))
+
+# Widgets dentro do frame central
+
+
+tk.Label(frame_central, text="CPF:", bg="#2B2B2B", fg='white', font=("Montserrat", 20)).pack(pady=5)
+entry_cpf = tk.Entry(frame_central, font=("Montserrat", 20), bg="#2B2B2B", bd=1, relief="solid", fg="#ffffff")
 entry_cpf.pack()
 
-tk.Label(janela_login, text="Senha:", bg="#2B2B2B", fg='white', font=("Montserrat", 20)).pack(pady=5)
-entry_senha = tk.Entry(janela_login, show="*", font=("Montserrat", 20), bg="#2B2B2B", bd=2, relief="solid", fg="#ffffff")
+tk.Label(frame_central, text="Senha:", bg="#2b2b2b", fg='white', font=("Montserrat", 20)).pack(pady=5)
+entry_senha = tk.Entry(frame_central, show="*", font=("Montserrat", 20), bg="#2B2B2B", bd=1, relief="solid", fg="#ffffff")
 entry_senha.pack()
 
-tk.Button(janela_login, text="Entrar", command=tentar_login, fg="white", bg="#871FB4", relief="flat",font=("Montserrat", 18), width=10).pack(pady=10)
-tk.Button(janela_login, text="Cadastrar", command=abrir_janela_cadastro, fg="white", bg="#871FB4", relief="flat", font=("Montserrat", 18), width=10).pack(pady=5)
+tk.Button(frame_central, text="Entrar", command=tentar_login, fg="white", bg="#871FB4", relief="flat",
+          font=("Montserrat", 18), width=10).pack(pady=(50, 0))
+
+tk.Button(frame_central, text="Cadastrar", command=abrir_janela_cadastro, fg="white", bg="#871FB4", relief="flat",
+          font=("Montserrat", 18), width=10).pack(pady=20)

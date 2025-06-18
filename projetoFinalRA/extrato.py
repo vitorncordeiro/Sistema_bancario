@@ -41,5 +41,5 @@ def exportar_extrato(cpf, dados):
         f.write("-"*65 + "\n")
         f.write(f"Saldo final: R${saldo:.2f}\n")
         f.write("="*65 + "\n")
-        messagebox.showinfo("Extrato gerado", f"Extrato salvo em:\n{caminho_arquivo}")
+        os.startfile(caminho_arquivo)
     return caminho_arquivo
