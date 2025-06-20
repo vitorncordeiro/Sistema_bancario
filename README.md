@@ -1,6 +1,3 @@
-Claro! Aqui está um README atualizado e personalizado para o seu repositório, destacando que é o projeto final da disciplina de Raciocínio Algorítmico, sob orientação da professora Maicris Fernandes:
-
-````markdown
 # 🎓 Projeto Final – Raciocínio Algorítmico
 
 Este repositório contém o **projeto final** da disciplina *Raciocínio Algorítmico*, do curso de Engenharia de Software, ministrada pela professora **Maicris Fernandes**. Foi desenvolvido com o objetivo de aplicar os conceitos aprendidos ao longo do semestre em um projeto Java prático e funcional.
