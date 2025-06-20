@@ -1,106 +1,128 @@
-# 🎓 Projeto Final – Raciocínio Algorítmico
+# 🏦 Sistema Bancário
 
-Este repositório contém o **projeto final** da disciplina *Raciocínio Algorítmico*, do curso de Engenharia de Software, 1º período, ministrada pelo professor **Maicris Fernandes**. Foi desenvolvido com o objetivo de aplicar os conceitos aprendidos ao longo do semestre em um projeto Java prático e funcional.
-
----
-
-## 📘 Estrutura do Projeto
-
-- Cada exercício e desafio está organizado em arquivo `.java` separado.
-- O padrão de nomenclatura segue `ExNNN.java` ou com nomes descritivos para maiores clareza.
+Projeto final da disciplina de **Raciocínio Algorítmico**, do curso de Engenharia de Software, ministrada pelo professor **Maicris Fernandes**.
 
 ---
 
-## 🛠️ Como rodar
+## 🎯 Objetivo
+
+Desenvolver um sistema bancário simples em Java, com foco em lógica algorítmica, estruturas de controle, manipulação de dados e tratamento de exceções, que:
+
+- **Gerencia contas** (abrir, consultar, depositar, sacar, encerrar).
+- **Valida entradas** do usuário com tratamento de erros.
+- Demonstra uso de **orientação a objetos** e boas práticas de codificação.
+
+---
+
+## 📁 Estrutura do projeto
+
+```
+
+Sistema\_bancario/
+├── src/
+│   ├── Main.java
+│   ├── Banco.java
+│   ├── Conta.java
+│   ├── Cliente.java
+│   └── Utils.java
+└── README.md
+
+````
+
+- `Main.java`: ponto de entrada do sistema com menu interativo.
+- `Banco.java`: gerencia a lista de contas e operações bancárias.
+- `Conta.java`: representa uma conta bancária (número, titular, saldo).
+- `Cliente.java`: estrutura de dados do cliente (nome, CPF, etc.).
+- `Utils.java`: métodos auxiliares (validação de input, leituras via `Scanner`).
+
+---
+
+## ⚙️ Como executar
 
 1. Clone o projeto:
    ```bash
-   git clone https://github.com/vitorncordeiro/PraticaJava.git
+   git clone https://github.com/vitorncordeiro/Sistema_bancario.git
 ````
 
-2. Acesse o diretório:
+2. Entre na pasta principal:
 
    ```bash
-   cd PraticaJava
+   cd Sistema_bancario
    ```
-3. Compile e execute o programa desejado:
+3. Compile todos os arquivos:
 
    ```bash
-   javac NomeDaClasse.java
-   java NomeDaClasse
+   javac src/*.java -d out
+   ```
+4. Execute:
+
+   ```bash
+   java -cp out Main
    ```
 
-   Substitua `NomeDaClasse` por aquele que deseja testar, como `Ex005` ou o nome real do exercício.
+---
+
+## 📋 Funcionalidades
+
+* **Criar nova conta**: registra conta com número gerado automaticamente.
+* **Consultar conta**: exibe dados da conta e saldo atual.
+* **Depositar**: permite adicionar valor ao saldo.
+* **Sacar**: faz retirada, com validação de saldo.
+* **Encerrar conta**: remove conta, se saldo é zero.
+* **Validações robustas**: impede CPF, números ou valores inválidos.
 
 ---
 
-## 📂 Exercícios e Funcionalidades
+## 📌 Aprendizados
 
-* **Exercício X** – *Título descritivo do exercício*
-  Breve descrição do que o exercício faz e como foi utilizado no projeto.
-
-* **Exercício Y** – *Título descritivo*
-  Explicação sucinta da lógica por trás e do aprendizado.
-
-*(Adicione aqui cada classe e uma linha explicando o que faz.)*
-
----
-
-## 🎯 Objetivos de Aprendizagem
-
-O projeto aborda os seguintes aspectos:
-
-* Estruturas de controle (`if`, `while`, `do-while`, etc.)
-* Validação de entrada com `Scanner` e tratamento de exceções
-* Manipulação de `String`, tipos primitivos e wrappers (`Integer`, `Double`)
-* Boas práticas de código, modularização e nomenclatura clara
+* Estruturas de repetição (`while`, `for`).
+* Condicionais (`if` / `else`).
+* Tratamento de exceções (`try` / `catch`).
+* Uso de classes e encapsulamento (POJOs).
+* Entradas seguras pelo terminal com `Scanner`.
+* Boas práticas no design de métodos e modularização do código.
 
 ---
 
-## 💡 Contribuições e extensões
+## 🧪 Testes e melhorias futuras
 
-Este projeto termina como ponto de partida, mas pode ser expandido com:
-
-* Implementação de **testes automatizados** (JUnit)
-* Criação de **exercícios adicionais** envolvendo arrays, listas ou I/O
-* Refatoração para **orientação a objetos** (criação de classes, pacotes)
-* Conversão para **interfaces gráficas** (Swing, JavaFX)
-
-Contribuições são bem-vindas! Para adicionar, basta clonar, criar uma branch, desenvolver e abrir um *pull request* com descrição do exercício implementado.
+* **Cobertura de testes** em JUnit para métodos da classe `Banco` e `Conta`.
+* Interface gráfica (Swing/JavaFX).
+* Adição de persistência em arquivos ou banco de dados.
+* Operações bancárias avançadas (transferência, extrato).
 
 ---
 
-## 🧑‍🏫 Professor
+## 📚 Referências
 
-* **Professora Maicris Fernandes** – Disciplina de Raciocínio Algorítmico, Engenharia de Software
-
----
-
-## 📝 Licença
-
-Este projeto está sob a **MIT License**. Fique à vontade para usar, modificar e compartilhar conforme os termos da licença.
+* Orientação do professor **Maicris Fernandes**.
+* Apostilas e material didático da disciplina.
+* Exemplos e padrões de mercado em Java.
 
 ---
 
-## 📌 Autor
+## 📝 Autor
 
-**Vitor N. Cordeiro**
-Repositório utilizado para prática de lógica, algoritmos e aplicação de conceitos Java.
+**Vitor N. Cordeiro** — estudante de Engenharia de Software.
+Trabalho desenvolvido para a disciplina de Raciocínio Algorítmico (PFE).
 
 ---
 
-**⚠️ Dica:** você pode adicionar badges de versão, build status ou links para deploy futuro. Quer ajuda com isso? É só avisar!
+## 📄 Licença
+
+Este projeto é distribuído sob a [MIT License](LICENSE), garantindo liberdade de uso, modificação e distribuição.
 
 ```
 
 ---
 
-### 🖋️ Como adicionar
+### 🧩 Como usar este modelo
 
-1. Crie (ou edite) o arquivo `README.md` na raiz do repositório.
-2. Cole o conteúdo acima.
-3. Ajuste os nomes dos exercícios e descrições conforme cada classe presente.
-4. Faça commit e **push**.
+1. Crie um arquivo `README.md` na raiz do projeto.
+2. Copie e cole o conteúdo acima.
+3. Ajuste conforme necessário (nomes de classes, instruções de compilação, etc.).
+4. Commit e push para atualizar o repositório.
 
-Se quiser que eu gere o Trophy do GitHub (como badge de contribuições) ou adicionar integração com CI/CD, é só me pedir!
+Se quiser adicionar exemplos de execução, badges de estado (build, cobertura), integração contínua ou templates para issues/pull requests, posso te ajudar com isso também!
+::contentReference[oaicite:0]{index=0}
 ```
