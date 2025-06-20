@@ -41,10 +41,10 @@ Sistema_bancario/
    cd Sistema_bancario
    ```
 
-2. Execute o arquivo `interface.py`:
+2. Execute o arquivo `main.py`:
 
    ```bash
-   python interface.py
+   python main.py
    ```
 
 > **Requisitos:** Certifique-se de ter o Python 3 instalado com o pacote `tkinter`.
