@@ -24,12 +24,12 @@ O sistema permite ao usuário:
 Sistema_bancario/
 │
 ├── banco.py               # Funções principais do sistema bancário
-├── caixinha.py            # Gerenciamento da funcionalidade de caixinha
 ├── extrato.py             # Controle de extratos e exportações
 ├── graficos.py            # Geração de gráficos com Matplotlib
 ├── interface.py           # Interface gráfica principal com Tkinter
 ├── usuario.py             # Cadastro e autenticação de usuários
-└── dados/                 # Pasta onde os dados são armazenados (.txt)
+├── extratos/              # Pasta onde os extratos são salvos (.txt)
+└── dados/                 # Pasta onde os dados são armazenados (.json)
 ```
 
 ## ▶️ Como executar
