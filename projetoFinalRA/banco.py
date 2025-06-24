@@ -1,4 +1,4 @@
-from usuario import carregar_usuarios, salvar_usuarios
+from usuario import salvar_usuarios
 from datetime import datetime
 
 def registrar_transacao(cpf, tipo, valor, dados):
@@ -12,7 +12,7 @@ def registrar_transacao(cpf, tipo, valor, dados):
 def depositar(cpf, valor, dados):
     
     dados[cpf]["saldo"] += valor
-    registrar_transacao(cpf, f"depósito para {cpf}", valor, dados)
+    registrar_transacao(cpf, f"depósito", valor, dados)
     salvar_usuarios(dados)
     
     return dados[cpf]["saldo"]
@@ -21,7 +21,7 @@ def sacar(cpf, valor, dados):
     if valor > dados[cpf]["saldo"]:
         return None  # saldo insuficiente
     dados[cpf]["saldo"] -= valor
-    registrar_transacao(cpf, f"saque de {cpf}", valor, dados)
+    registrar_transacao(cpf, "saque", valor, dados)
     salvar_usuarios(dados)
     return dados[cpf]["saldo"]
 

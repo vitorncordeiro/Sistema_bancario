@@ -8,3 +8,4 @@ inicializar_arquivo()
 
 janela_login.mainloop()
     
+

@@ -18,8 +18,8 @@ def abrir_janela_transferencia(titulo, cpf, dados, label):
     entry_saldo.pack(pady=20)
 
     tk.Label(janela, bg="#2b2b2b", fg="white", text="Cpf do destinatário:").pack(pady=5)
-    entry_cpf_remetente = tk.Entry(janela, font=("Montserrat", 16))
-    entry_cpf_remetente.pack(pady=20)
+    entry_cpf_destinatario = tk.Entry(janela, font=("Montserrat", 16))
+    entry_cpf_destinatario.pack(pady=20)
 
     def confirmar():
         try:
@@ -29,18 +29,22 @@ def abrir_janela_transferencia(titulo, cpf, dados, label):
         except ValueError:
             entry_saldo.delete(0, tk.END)
             messagebox.showerror("Erro", "O valor inserido é inválido")
+            janela.destroy()
             return
 
-        novo_saldo = transferir(cpf, entry_cpf_remetente.get(), valor, dados)
+        novo_saldo = transferir(cpf, entry_cpf_destinatario.get(), valor, dados)
 
         if novo_saldo == "destinatário não encontrado":
             messagebox.showerror("Erro", "O destinatário não está cadastrado no sistema")
+            janela.destroy()
             return
         elif novo_saldo == "saldo insuficiente":
             messagebox.showerror("Erro", "Transação não autorizada: Saldo insuficiente.")
+            janela.destroy()
             return
         elif novo_saldo == "destinatário igual remetente":
             messagebox.showerror("Erro", "Transação não autorizada: Você não pode transferir para si mesmo.")
+            janela.destroy()
             return
 
         atualizar_saldo_na_tela(label, novo_saldo)
@@ -65,6 +69,7 @@ def abrir_janela_valor(titulo, acao, cpf, dados, label):
         except ValueError:
             entry.delete(0, tk.END)
             messagebox.showerror("Erro", "O valor inserido é inválido")
+            janela.destroy()
             return
 
         if acao == "depositar":
@@ -74,6 +79,7 @@ def abrir_janela_valor(titulo, acao, cpf, dados, label):
             if novo_saldo is None:
                 entry.delete(0, tk.END)
                 messagebox.showerror("Erro", "Transação não autorizada: Saldo insuficiente.")
+                janela.destroy()
                 return
         else:
             return

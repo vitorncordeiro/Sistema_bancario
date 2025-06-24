@@ -33,10 +33,12 @@ def exportar_extrato(cpf, dados):
             tipo = transacao["tipo"].capitalize()
             if tipo == "Saque":
                 tipo = tipo + " "*25
-            elif tipo == "Deposito":
+            elif tipo == "Depósito":
                 tipo = tipo + " "*22
+            elif "Transferência de" in tipo:
+                tipo = tipo + "  "
             valor = f"{transacao['valor']:.2f}"
-            f.write(f"{data} | {tipo:<7} | {valor:>10}\n")
+            f.write(f"{data} | {tipo} | {valor}\n")
 
         f.write("-"*65 + "\n")
         f.write(f"Saldo final: R${saldo:.2f}\n")
